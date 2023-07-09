@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "patterns",
+  "info": {
+    "singularName": "pattern",
+    "pluralName": "patterns",
+    "displayName": "Pattern",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "latestPossibleDiscoveryDate": {
+      "type": "date",
+      "required": true
+    },
+    "earliestPossibleDiscoveryDate": {
+      "type": "date"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "patterns"
+    },
+    "rules": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rule.rule",
+      "inversedBy": "patterns"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "pattern": {
+      "type": "text",
+      "required": true
+    },
+    "encoding": {
+      "type": "enumeration",
+      "enum": [
+        "rle",
+        "macrocell"
+      ],
+      "required": true,
+      "default": "rle"
+    },
+    "discoverers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::discoverer.discoverer",
+      "inversedBy": "patterns"
+    }
+  }
+}

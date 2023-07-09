@@ -1,57 +1,39 @@
-# 🚀 Getting started with Strapi
+# Cellular Automata Pattern Database
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+This is the repository for the Database of Cellular Automata Patterns.
 
-### `develop`
+## Running the Database
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+This is the workflow for prototyping the database schema.
+TODO: Update this when the database goes live.
 
-```
-npm run develop
-# or
-yarn develop
-```
+1. Setup
 
-### `start`
+   -  Prerequisites
+      -  [Node.js](https://nodejs.org)
+      -  [Yarn](https://yarnpkg.com/)
+      -  [Python](https://python.org)
+   -  Setup Project
+      ```sh
+      git clone https://github.com/conwaylife-dev/conwaylifedb
+      yarn install
+      ```
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+2. Import data from file and run the dev server
 
-```
-npm run start
-# or
-yarn start
-```
+   ```sh
+   yarn strapi import -f ${filename}
+   yarn develop
+   ```
 
-### `build`
+3. Edit the schema and add data with the input site.
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+   -  A script that autoimports data in bulk is planned after the schema is set.
 
-```
-npm run build
-# or
-yarn build
-```
+4. Save your work
 
-## ⚙️ Deployment
+   ```sh
+   yarn strapi export --no-encrypt
+   ```
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+5. Share the prototype database.

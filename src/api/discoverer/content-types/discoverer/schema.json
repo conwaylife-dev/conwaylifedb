@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discoverers",
+  "info": {
+    "singularName": "discoverer",
+    "pluralName": "discoverers",
+    "displayName": "Discoverer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "patterns": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pattern.pattern",
+      "mappedBy": "discoverers"
+    }
+  }
+}
